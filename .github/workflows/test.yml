@@ -1,0 +1,12 @@
+on:
+  workflow_run:
+    workflows: [Copilot coding agent]
+    types:
+      - completed
+    
+
+jobs:
+  job-name:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'done'
