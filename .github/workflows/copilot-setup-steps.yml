@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    env:
-      VALUE1: ${{ secrets.SECRET1 }}
-      VALUE2: ${{ vars.VAR123 }}
     steps:
       - run: |
           echo ${VALUE1}
           echo ${VALUE2}
+        env:
+          VALUE1: ${{ secrets.SECRET1 }}
+          VALUE2: ${{ vars.VAR123 }}
