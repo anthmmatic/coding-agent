@@ -1,0 +1,17 @@
+name: "Copilot Setup Steps"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      VALUE1: ${{ secrets.SECRET1 }}
+      VALUE2: ${{ vars.VAR123 }}
+    steps:
+      - run: |
+          echo ${VALUE1}
+          echo ${VALUE2}
