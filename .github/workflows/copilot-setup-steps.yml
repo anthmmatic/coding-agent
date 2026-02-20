@@ -10,8 +10,8 @@ jobs:
       contents: read
     steps:
       - run: |
-          VALUE1="${{ secrets.SECRET1 }}" >> "$GITHUB_ENV
-          VALUE2="${{ vars.VAR123 }}" >> "$GITHUB_ENV
+          VALUE1="${{ secrets.SECRET1 }}" >> "$GITHUB_ENV"
+          VALUE2="${{ vars.VAR123 }}" >> "$GITHUB_ENV"
       - run: |
           echo ${VALUE1}
           echo ${VALUE2}
