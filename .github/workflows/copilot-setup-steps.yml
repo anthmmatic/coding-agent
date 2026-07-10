@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      TEST: "test"
+      COPILOT_MCP_TEST: "mcptest"
     steps:
       - run: |
-          VALUE1="${{ secrets.SECRET1 }}" >> "$GITHUB_ENV"
-          VALUE2="${{ vars.VAR123 }}" >> "$GITHUB_ENV"
+          VALUE1="test1" >> "$GITHUB_ENV"
+          COPILOT_MCP_VALUE2="mytest" >> "$GITHUB_ENV"
       - run: |
-          echo ${VALUE1}
-          echo ${VALUE2}
+          echo ${TEST}
+          echo ${COPILOT_MCP_TEST}
